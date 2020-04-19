@@ -1,0 +1,29 @@
+{
+  "name": "CSCI-3308---Software-Project-103-2-",
+  "version": "1.0.0",
+  "description": "Project and Code Components for Team Team = [Hip Hip Array]. Team # 103-2",
+  "main": "server.js",
+  "scripts": {
+    "devStart": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sahandset/CSCI-3308---Software-Project-103-2-.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sahandset/CSCI-3308---Software-Project-103-2-/issues"
+  },
+  "homepage": "https://github.com/sahandset/CSCI-3308---Software-Project-103-2-#readme",
+  "dependencies": {
+    "bcrypt": "^4.0.1",
+    "bcryptjs": "^2.4.3",
+    "express": "^4.17.1",
+    "node-gyp": "^6.1.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.3"
+  }
+}
