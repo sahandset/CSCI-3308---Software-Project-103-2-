@@ -1,0 +1,480 @@
+db.createCollection('Patients')
+
+db.Patients.insert(
+  {
+    patientID: 000000001,
+    name: 'Ash Ketchum',
+    username: 'ash.catchemall@pokemon.com',
+    password: 'pikachuisBEST1',
+    activebool: true,
+    dateCreated: new Date('November 1, 2019'),
+    dateUpdated: new Date('March 2, 2020'),
+    clinicAddress: '2359  Rebecca Street, Skokie, IL 60077',
+    labResults:
+    [
+      {
+        name: 'Blood Test',
+        description: 'Good HDL, High LDL',
+        date: new Date('August 14, 2019'),
+        reportDate: new Date('August 24, 2019')
+      },
+      {
+        name: 'Urine Test',
+        description: 'All negative',
+        date: new Date('August 14, 2019'),
+        reportDate: new Date('August 26, 2019')
+      }
+    ],
+    referral:
+    {
+      medicalArea: 'Immunology',
+      clinicAddress: '2239  Jadewood Drive, Chicago, IL 60605',
+      lastAppointment: new Date('January 5, 2020'),
+      specialistName: 'Dr. Alan Norwood'
+    },
+    patientInfo:
+    {
+      age: 10,
+      height: '5 feet 5 inches',
+      weight: 94.8,
+      gender: 'Male',
+      ethnicity: 'Asian'
+    },
+    insurance:
+    {
+      name: 'NeverAge',
+      rxGRP: 'Rx000045',
+      phone: '123-456-7890',
+      insuranceNumber: 123456789,
+      expDate: new Date('May 12, 2022'),
+      memberName: 'Ash Ketchum'
+    }
+  })
+
+db.Patients.insertMany([
+    {
+      patientID: 000000002,
+      name: 'Naruto Uzamaki',
+      username: 'iamHokage@naruto.com',
+      password: 'BEL13VEIT!',
+      activebool: true,
+      dateCreated: new Date('August 7, 2019'),
+      dateUpdated: new Date('April 11, 2020'),
+      clinicAddress: '680  Carolina Avenue, Fort Collins, CO 80525',
+      labResults:
+      [
+        {
+          name: 'Blood Test',
+          description: 'Good HDL, High LDL',
+          date: new Date('November 2, 2019'),
+          reportDate: new Date('November 14, 2019')
+        },
+        {
+          name: 'Urine Test',
+          description: 'All negative',
+          date: new Date('November 2, 2019'),
+          reportDate: new Date('November 14, 2019')
+        },
+        {
+          name: 'Biopsy Test',
+          description: 'All negative',
+          date: new Date('December 28, 2019'),
+          reportDate: new Date('January 8, 2020')
+        }
+      ],
+      patientInfo:
+      {
+        age: 27,
+        height: '5 feet 8 inches',
+        weight: 110.23,
+        gender: 'Male',
+        ethnicity: 'Asian'
+      },
+      prescription:
+      {
+        name: 'Celocoxib',
+        datePrescribed: new Date('January 8, 2019'),
+        staffName: 'Mary Haunt',
+        staffID: 123000,
+        cost: 500,
+        active: true
+      },
+      insurance:
+      {
+        name: 'LeafHealth',
+        rxGRP: 'Rx009821',
+        phone: '111-111-1111',
+        insuranceNumber: 123456789,
+        expDate: new Date('August 15, 2024'),
+        memberName: 'Hinata Uzamaki'
+      }
+    },
+    {
+      patientID: 000000003,
+      name: 'Darth Vader',
+      username: 'heavyBreather@starwars.com',
+      password: 'whosFather79',
+      activebool: true,
+      dateCreated: new Date('September 3, 2019'),
+      dateUpdated: new Date('January 1, 2020'),
+      clinicAddress: '1016  Stout Street, Richmond, VA 23278',
+      labResults:
+      [
+        {
+          name: 'Blood Test',
+          description: 'Low HDL, Low LDL',
+          date: new Date('July 5, 2019'),
+          reportDate: new Date('July 16, 2019')
+        }
+      ],
+      patientInfo:
+      {
+        age: 45,
+        height: '6 feet 2 inches',
+        weight: 196,
+        gender: 'Male',
+        ethnicity: 'Caucasian'
+      },
+      prescription:
+      {
+        name: 'Fluticasone',
+        datePrescribed: new Date('May 12, 2019'),
+        staffName: 'Darke Meel',
+        staffID: 000123,
+        cost: 17,
+        active: true
+      },
+      insurance:
+      {
+        name: 'DarthHealth',
+        rxGRP: 'Rx908111',
+        phone: '222-222-2222',
+        insuranceNumber: 123456789,
+        expDate: new Date('February 2, 2022'),
+        memberName: 'Darth Vader'
+      }
+    }
+  ])
+
+  db.Patients.insert(
+    {
+      patientID: 000000004,
+      name: 'Emeril Lagasse',
+      username: 'bestTVchef@foodnetwork.com',
+      password: 'Bam!123Bam!',
+      activebool: true,
+      dateCreated: new Date('October 5, 2019'),
+      dateUpdated: new Date('January 5, 2020'),
+      clinicAddress: '1811  Parkway Drive, Tuscon, AZ 85712',
+      labResults:
+      [
+        {
+          name: 'Blood Test',
+          description: 'High HDL, High LDL',
+          date: new Date('October 2, 2019'),
+          reportDate: new Date('October 14, 2019')
+        },
+        {
+          name: 'Urine Test',
+          description: 'All negative',
+          date: new Date('October 2, 2019'),
+          reportDate: new Date('October 14, 2019')
+        }
+      ],
+      patientInfo:
+      {
+        age: 60,
+        height: '5 feet 7 inches',
+        weight: 185,
+        gender: 'Male',
+        ethnicity: 'Caucasian'
+      },
+      insurance:
+      {
+        name: 'BlueShield',
+        rxGRP: 'Rx789000',
+        phone: '333-333-3333',
+        insuranceNumber: 123456789,
+        expDate: new Date('April 1, 2023'),
+        memberName: 'Emeril Lagasse'
+      }
+  })
+
+  db.Patients.insertMany([
+    {
+      patientID: 000000005,
+      name: 'Dinosaur Barney',
+      username: 'bestTVshow@disney.com',
+      password: 'originaluvu3000',
+      activebool: true,
+      dateCreated: new Date('May 19, 2019'),
+      dateUpdated: new Date('February 6, 2020'),
+      clinicAddress: '2773  School Street, Washington, DC 20036',
+      labResults:
+      [
+        {
+          name: 'Blood Test',
+          description: 'Good HDL, Good LDL',
+          date: new Date('September 1, 2019'),
+          reportDate: new Date('September 16, 2019')
+        },
+        {
+          name: 'Urine Test',
+          description: 'All negative',
+          date: new Date('September 1, 2019'),
+          reportDate: new Date('September 16, 2019')
+        }
+      ],
+      referral:
+      {
+        medicalArea: 'Rectal Surgeon',
+        clinicAddress: '3546  Hickory Lane, Washington, DC 20005',
+        lastAppointment: new Date('May 25, 2019'),
+        specialistName: 'Dr. Adam Jeckell'
+      },
+      patientInfo:
+      {
+        age: 200000000,
+        height: '6 feet 0 inches',
+        weight: 350,
+        gender: 'Male',
+        ethnicity: 'Dinosaur'
+      },
+      insurance:
+      {
+        name: 'ImagHealth',
+        rxGRP: 'Rx000000',
+        phone: '444-444-4444',
+        insuranceNumber: 123456789,
+        expDate: new Date('June 19, 2020'),
+        memberName: 'Dinosaur Barney'
+      }
+    },
+    {
+      patientID: 000000006,
+      name: 'Crazy Redd',
+      username: 'amnotaFraud@acc.com',
+      password: 'buymahPictures12',
+      activebool: true,
+      dateCreated: new Date('August 12, 2019'),
+      dateUpdated: new Date('March 7, 2020'),
+      clinicAddress: '3725  Cardinal Lane, Quincy, IL 62301',
+      labResults:
+      [
+        {
+          name: 'Blood Test',
+          description: 'Low HDL, Good LDL',
+          date: new Date('April 18, 2019'),
+          reportDate: new Date('April 27, 2019')
+        },
+        {
+          name: 'Urine Test',
+          description: 'All negative',
+          date: new Date('April 18, 2019'),
+          reportDate: new Date('April 28, 2019')
+        },
+        {
+          name: 'Biopsy Test',
+          description: 'Positive for cancer',
+          date: new Date('May 1, 2019'),
+          reportDate: new Date('May 10, 2019')
+        }
+      ],
+      referral:
+      {
+        medicalArea: 'Cancer Care',
+        clinicAddress: '3867  Pyramid Valley Road, Alden, IL 60001',
+        lastAppointment: new Date('June 12, 2019'),
+        specialistName: 'Dr. Susan Cares'
+      },
+      patientInfo:
+      {
+        age: 35,
+        height: '3 feet 0 inches',
+        weight: 25,
+        gender: 'Male',
+        ethnicity: 'Fox'
+      },
+      insurance:
+      {
+        name: 'ACCHealth',
+        rxGRP: 'Rx001100',
+        phone: '555-555-5555',
+        insuranceNumber: 123456789,
+        expDate: new Date('December 14, 2025'),
+        memberName: 'Crazy Redd'
+      }
+    },
+    {
+      patientID: 000000007,
+      name: 'Homer Simpson',
+      username: 'eatDonuts@springfield.com',
+      password: 'doh!123Donuts',
+      activebool: true,
+      dateCreated: new Date('July 1, 2019'),
+      dateUpdated: new Date('April 1, 2020'),
+      clinicAddress: '4477  Oak Way, Monsey, NY 10952',
+      labResults:
+      [
+        {
+          name: 'Blood Test',
+          description: 'Low HDL, Low LDL',
+          date: new Date('June 3, 2019'),
+          reportDate: new Date('June 12, 2019')
+        },
+        {
+          name: 'Urine Test',
+          description: 'All negative',
+          date: new Date('June 3, 2019'),
+          reportDate: new Date('June 14, 2019')
+        }
+      ],
+      patientInfo:
+      {
+        age: 39,
+        height: '6 feet 0 inches',
+        weight: 315,
+        gender: 'Male',
+        ethnicity: 'Fox'
+      },
+      prescription:
+      {
+        name: 'Chlorthalidone',
+        datePrescribed: new Date('August 19, 2020'),
+        staffName: 'Cherry Cheeks',
+        staffID: 098212,
+        cost: 16,
+        active: true
+      },
+      insurance:
+      {
+        name: 'SpringHealth',
+        rxGRP: 'Rx009001',
+        phone: '777-777-7777',
+        insuranceNumber: 123456789,
+        expDate: new Date('May 18, 2023'),
+        memberName: 'Marge Simpson'
+      }
+    },
+    {
+      patientID: 000000008,
+      name: 'Fa Mulan',
+      username: 'IsavedChina@disney.com',
+      password: 'bestedtheHuns7',
+      activebool: true,
+      dateCreated: new Date('October 15, 2019'),
+      dateUpdated: new Date('February 4, 2020'),
+      clinicAddress: '729  Burton Avenue, Memphis, TN 38141',
+      labResults:
+      [
+        {
+          name: 'Blood Test',
+          description: 'Good HDL, Good LDL',
+          date: new Date('February 17, 2019'),
+          reportDate: new Date('February 26, 2019')
+        },
+        {
+          name: 'Urine Test',
+          description: 'All negative',
+          date: new Date('February 17, 2019'),
+          reportDate: new Date('February 26, 2019')
+        }
+      ],
+      referral:
+      {
+        medicalArea: 'Nutritionist',
+        clinicAddress: '1048  Wetzel Lane, Adams, TN 37010',
+        lastAppointment: new Date('July 28, 2019'),
+        specialistName: 'Dr. Thyme Leif'
+      },
+      patientInfo:
+      {
+        age: 16,
+        height: '5 feet 4 inches',
+        weight: 96,
+        gender: 'Female',
+        ethnicity: 'Asian'
+      },
+      insurance:
+      {
+        name: 'HanHealth',
+        rxGRP: 'Rx111000',
+        phone: '888-888-8888',
+        insuranceNumber: 123456789,
+        expDate: new Date('October 21, 2022'),
+        memberName: 'Fa Zhou'
+      }
+    },
+    {
+      patientID: 000000009,
+      name: 'Walt Disney',
+      username: 'bestMoviesever@disney.com',
+      password: 'alsoBestthemeparks7',
+      activebool: false,
+      dateCreated: new Date('May 24, 2019'),
+      dateUpdated: new Date('January 24, 2020'),
+      clinicAddress: '2318  Bloomfield Way, Rockland, ME 04841',
+      labResults:
+      [
+        {
+          name: 'Blood Test',
+          description: 'Good HDL, Good LDL',
+          date: new Date('December 2, 2019'),
+          reportDate: new Date('December 11, 2019')
+        }
+      ],
+      patientInfo:
+      {
+        age: 65,
+        height: '5 feet 10 inches',
+        weight: 180,
+        gender: 'Male',
+        ethnicity: 'Caucasian'
+      },
+      insurance:
+      {
+        name: 'BlueShield',
+        rxGRP: 'Rx789000',
+        phone: '333-333-3333',
+        insuranceNumber: 000123456,
+        expDate: new Date('December 12, 2024'),
+        memberName: 'Walt Disney'
+      }
+    },
+    {
+      patientID: 000000010,
+      name: 'Edna Mode',
+      username: 'doNotMakeCapes@disney.com',
+      password: 'capesKill890',
+      activebool: true,
+      dateCreated: new Date('December 6, 2019'),
+      dateUpdated: new Date('March 15, 2020'),
+      clinicAddress: '4497  Boundary Street, Norwalk, CT 06851',
+      labResults:
+      [
+        {
+          name: 'Blood Test',
+          description: 'Low HDL, Low LDL',
+          date: new Date('September 13, 2019'),
+          reportDate: new Date('September 21, 2019')
+        }
+      ],
+      patientInfo:
+      {
+        age: 55,
+        height: '4 feet 3 inches',
+        weight: 50,
+        gender: 'Female',
+        ethnicity: 'Caucasian'
+      },
+      insurance:
+      {
+        name: 'HeroHealth',
+        rxGRP: 'Rx098123',
+        phone: '999-999-9999',
+        insuranceNumber: 000123456,
+        expDate: new Date('July 18, 2019'),
+        memberName: 'Edna Mode'
+      }
+    }
+  ])
