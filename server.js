@@ -31,7 +31,7 @@ var pgp = require('pg-promise')();
 // };
 
 const MongoClient = require('mongodb').MongoClient;
-const uri = "mongodb+srv://<sase2524@colorado.edu>:<hiphiparray>@cluster0-ysjbv.gcp.mongodb.net/test?retryWrites=true&w=majority";
+const uri = "mongodb+srv://Sahand:12345@cluster0-ysjbv.gcp.mongodb.net/test?retryWrites=true&w=majority";
 const client = new MongoClient(uri, { useNewUrlParser: true });
 client.connect(err => {
   const collection = client.db("test").collection("devices");
