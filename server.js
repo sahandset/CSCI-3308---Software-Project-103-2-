@@ -22,15 +22,24 @@ var pgp = require('pg-promise')();
   user: This should be left as postgres, the default user account created when PostgreSQL was installed
   password: This the password for accessing the database.  You'll need to set a password USING THE PSQL TERMINAL THIS IS NOT A PASSWORD FOR POSTGRES USER ACCOUNT IN LINUX!
 **********************/
-const dbConfig = {
-	host: 'localhost',
-	port: 5432, /*idk if we need to change the port? */
-	database: '????????',
-	user: 'postgres',
-	password: '????????'
-};
+// const dbConfig = {
+// 	host: 'localhost',
+// 	port: 5432, /*idk if we need to change the port? */
+// 	database: '????????',
+// 	user: 'postgres',
+// 	password: '????????'
+// };
 
-var db = pgp(dbConfig);
+const MongoClient = require('mongodb').MongoClient;
+const uri = "mongodb+srv://<sase2524@colorado.edu>:<hiphiparray>@cluster0-ysjbv.gcp.mongodb.net/test?retryWrites=true&w=majority";
+const client = new MongoClient(uri, { useNewUrlParser: true });
+client.connect(err => {
+  const collection = client.db("test").collection("devices");
+  // perform actions on the collection object
+  client.close();
+});
+
+// var db = pgp(dbConfig);
 
 // set the view engine to ejs
 app.set('view engine', 'ejs');
