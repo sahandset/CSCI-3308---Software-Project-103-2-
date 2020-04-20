@@ -34,7 +34,7 @@ const MongoClient = require('mongodb').MongoClient;
 const uri = "mongodb+srv://Sahand:12345@cluster0-ysjbv.gcp.mongodb.net/test?retryWrites=true&w=majority";
 const client = new MongoClient(uri, { useNewUrlParser: true });
 client.connect(err => {
-  const collection = client.db("test").collection("Patients");
+  const collection = client.db("nuraHealth").collection("Patients");
   // perform actions on the collection object
   client.close();
 });
