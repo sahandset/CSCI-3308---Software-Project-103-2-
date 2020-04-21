@@ -12,7 +12,7 @@ app.use(bodyParser.json());              // support json encoded bodies
 app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
 
 //Create Database Connection
-var pgp = require('pg-promise')();
+// var pgp = require('pg-promise')();
 
 /**********************
   Database Connection information
@@ -35,6 +35,7 @@ const uri = "mongodb+srv://Sahand:12345@cluster0-ysjbv.gcp.mongodb.net/test?retr
 const client = new MongoClient(uri, { useNewUrlParser: true });
 client.connect(err => {
   const collection = client.db("nuraHealth").collection("Patients");
+  console.log(collection);
   // perform actions on the collection object
   client.close();
 });
@@ -109,40 +110,60 @@ app.use(express.static(__dirname + '/'));//This line is necessary for us to use 
 
 ************************************/
 // Log in and Sign up 
-app.use(express.json())
-const bcrypt = require('bcrypt')
-const users = []
+// app.use(express.json())
+// const bcrypt = require('bcrypt')
+// const users = []
 
-app.get('/users', (req, res) => {
-res.json(users)
-})
+// app.get('/users', (req, res) => {
+// res.json(users)
+// })
 
-app.post('/users', async (req, res) => {
+// app.post('/users', async (req, res) => {
+//     try {
+//         const hashedPassword = await bcrypt.hash(req.body.password, 10)
+//         const user = { name: req.body.name, password: hashedPassword }
+//         users.push(user)
+//         res.status(201).send()
+//     } catch {
+//         res.status(500).send()
+//     }
+// })
+
+// app.post('/users/login', async (req,res) => {
+//     const user = users.find(user => user.name = req.body.name)
+//     if (user == null) {
+//         return res.status(400).send('Cannot find user')
+//     }
+//     try {
+//        if (await bcrypt.compare(req.body.password, user.password)) {
+//            res.send("Success")
+//        } else {
+//            res.send("Not Allowed")
+//        }
+//     } catch {
+//         res.status(500).send()
+//     }
+// })
+
+function validate(username, password){
+    var inputUsername = username;
+    var inputPassword = password;
     try {
-        const hashedPassword = await bcrypt.hash(req.body.password, 10)
-        const user = { name: req.body.name, password: hashedPassword }
-        users.push(user)
-        res.status(201).send()
+    const user = db.collection.find({name: username});
+    //var name = user.name;
+    var psw = user.password;
     } catch {
-        res.status(500).send()
+        alert("User does not exist");
+        // Add a response when the user does not exist
     }
-})
+    if(inputPassword == psw)
+    {
+        alert("Sucessful");
+        // Add response when the user exists and the passwords match - aka send them to profile page
+    }
+}
 
-app.post('/users/login', async (req,res) => {
-    const user = users.find(user => user.name = req.body.name)
-    if (user == null) {
-        return res.status(400).send('Cannot find user')
-    }
-    try {
-       if (await bcrypt.compare(req.body.password, user.password)) {
-           res.send("Success")
-       } else {
-           res.send("Not Allowed")
-       }
-    } catch {
-        res.status(500).send()
-    }
-})
+
 
 // login page
 app.get('/LogIn', function(req, res) {
