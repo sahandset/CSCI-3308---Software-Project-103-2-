@@ -58,4 +58,27 @@
         <p>NuraHealth, Copyright &copy; 2020</p>
     </footer>
     </body>
+    <script>
+    var firebaseConfig = {
+        apiKey: "AIzaSyCCcLaqUJU0CvpHwJsswSJtM9PS2Z5DMqw",
+        authDomain: "nura-f8aeb.firebaseapp.com",
+        databaseURL: "mongodb+srv://Sahand:12345@cluster0-ysjbv.gcp.mongodb.net/test?retryWrites=true&w=majority",
+        projectId: "nura-f8aeb",
+        storageBucket: "nura-f8aeb.appspot.com",
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+
+
+        const MongoClient = require('mongodb').MongoClient;
+        const uri = "mongodb+srv://Sahand:12345@cluster0-ysjbv.gcp.mongodb.net/test?retryWrites=true&w=majority";
+        const client = new MongoClient(uri, { useNewUrlParser: true });
+        client.connect(err => {
+          const collection = new client.db("nuraHealth").collection("Patients");
+          console.log(collection);
+          // perform actions on the collection object
+          client.close();
+        });
+    </script>
 </html>
