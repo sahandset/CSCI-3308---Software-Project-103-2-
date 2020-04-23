@@ -1,13 +1,17 @@
 <!DOCTYPE html>
 <html lang = "en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width", initial-scale="1.0">
-<meta http-equiv="X-UA-Compatible" content = "ie-edge">
-<link rel="stylesheet" href="resources/css/style.css">
-<link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
-<title> Welcome to NuraHealth </title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width", initial-scale="1.0">
+    <meta http-equiv="X-UA-Compatible" content = "ie-edge">
+
+    <link rel="stylesheet" href="resources/css/style.css">
+    <script type="text/javascript" src="../index.js"></script> 
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+
+    <title> Welcome to NuraHealth </title>
 </head>
+
     <body>
         <header>
         <div class="container">
@@ -18,8 +22,8 @@
 
             <nav>
                 <ul>
-                    <li><a href = "views/LogIn.html">LOGIN</a></li>
-                    <li><a href = "views/accountCreation.html">SIGN UP</a></li>
+                    <li><a href = "../views/LogIn.html">LOGIN</a></li>
+                    <li><a href = "../views/accountCreation.html">SIGN UP</a></li>
                 </ul>
             </nav>
         </div>
@@ -38,17 +42,17 @@
     <section id="boxes">
         <div class="container">
             <div class="box">
-                <img src="resources/img/connective.jpg" class="img">
+                <img src="../resources/img/connective.jpg" class="img">
                 <h3>Profoundly Advanced</h3>
                 <p>Nurahealth is powerfully equipped to serve every need, computationally</p>
             </div>
             <div class="box">
-                <img src="resources/img/rainforest.jpg" class="img">
+                <img src="../resources/img/rainforest.jpg" class="img">
                 <h3>Health & Wellness</h3>
                 <p>Explore our wellness resources for help and guidance on how to live a healthier tomorrow</p>
             </div>
             <div class="box">
-                <img src="resources/img/doctor.jpg" class="img">
+                <img src="../resources/img/doctor.jpg" class="img">
                 <h3>Your Health. Our Cause</h3>
                 <p>We are dedicated to providing our patients only the best level of service, all from the comfort of your device</p>
             </div>
@@ -58,27 +62,5 @@
         <p>NuraHealth, Copyright &copy; 2020</p>
     </footer>
     </body>
-    <script>
-    var firebaseConfig = {
-        apiKey: "AIzaSyCCcLaqUJU0CvpHwJsswSJtM9PS2Z5DMqw",
-        authDomain: "nura-f8aeb.firebaseapp.com",
-        databaseURL: "mongodb+srv://Sahand:12345@cluster0-ysjbv.gcp.mongodb.net/test?retryWrites=true&w=majority",
-        projectId: "nura-f8aeb",
-        storageBucket: "nura-f8aeb.appspot.com",
-    };
-    // Initialize Firebase
-    firebase.initializeApp(firebaseConfig);
-    firebase.analytics();
 
-
-        const MongoClient = require('mongodb').MongoClient;
-        const uri = "mongodb+srv://Sahand:12345@cluster0-ysjbv.gcp.mongodb.net/test?retryWrites=true&w=majority";
-        const client = new MongoClient(uri, { useNewUrlParser: true });
-        client.connect(err => {
-          const collection = new client.db("nuraHealth").collection("Patients");
-          console.log(collection);
-          // perform actions on the collection object
-          client.close();
-        });
-    </script>
 </html>
