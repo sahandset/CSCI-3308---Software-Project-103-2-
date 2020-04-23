@@ -22,41 +22,33 @@ if (firebase.apps.length === 0) {
 
 const db = firebase.firestore();
 
-function validate(username, password){
-    var inputUsername = username;
-    var inputPassword = password;
-    alert("inputUsername", inputUsername);
-    alert("inputPassword", inputPassword);
+function validate(){
+    var inputUsername = document.getElementById("usrnme").value;
+    var inputPassword = document.getElementById('psw').value;
+    // console.log("inputUsername", inputUsername);
+    // console.log("inputPassword", inputPassword);
     let patientRef = db.collection('patients');
-    let checkUsername = patientRef.where('name', '==', inputUsername).get();
-    let checkPassword = patientRef.where('password', '==', inputPassword).get();
+    console.log(patientRef);
+    // let checkUsername = patientRef.where('activebool','==',true).get();
+    // console.log(checkUsername);
+    // let checkPassword = patientRef.where('password', '==', inputPassword).get();
+
+    // console.log(checkPassword);
+
     if(checkUsername)
     {
         if(checkPassword)
         {
             // window.location.href("views/patient_profile.html")
-            alert("Worked");
+            console.log("Worked");
         }
         else
         {
-            alert("Incorrect username or password");
+            console.log("Incorrect username or password");
         }
     }
     else
     {
-        alert("Incorrect username or password");
+        console.log("Incorrect username or password");
     }
-  // .then(snapshot => {
-  //   if (snapshot.empty) {
-  //     console.log('No matching login.');
-  //     return;
-  //   }
-  //
-  //   snapshot.forEach(doc => {
-  //     console.log(doc.id, '=>', doc.data());
-  //   });
-  // })
-  // .catch(err => {
-    // console.log('Error getting documents', err);
-  // });
 }
