@@ -1,4 +1,3 @@
-
 var firebaseConfig = {
     apiKey: "AIzaSyD8bKi9454qFmAMO1-Gj0gSaphDRH4ImIA",
     authDomain: "nurahealth-70126.firebaseapp.com",
@@ -8,47 +7,51 @@ var firebaseConfig = {
     storageBucket: "nurahealth-70126.appspot.com",
 };
 
-// var firebase = require("firebase");
-// Initialize Firebase
 if (firebase.apps.length === 0) {
     firebase.initializeApp({firebaseConfig});
 }
-// firebase.analytics();
 
-// const admin = require('firebase-admin');
-// admin.initializeApp({
-//   credential: admin.credential.applicationDefault()
-// });
+var db = firebase.firestore();
 
-const db = firebase.firestore();
+// var docRef = db.doc("patients/new_Patient");
+// var userName = document.querySelector("#usrName");
+// //console.log(userName);
+// var userPsw = document.querySelector("#usrPsw");
+// var signUpButton = document.querySelector("#signUpButton");
+//
+// signUpButton.addEventListener("click", function() {
+//   const userNameToSave = userName.value;
+//   const pswToSave = userPsw.value;
+//   console.log("I am going to save" + userNameToSave + " " + pswToSave+ " to Firestore");
+//   docRef.set({
+//     username: userNameToSave,
+//     password: pswToSave
+//   }).then(function() {
+//     alert("Status saved!")
+//     return;
+//   }).catch(function(error){
+//     console.log("Got an error: ", error)
+//     return;
+//   });
+// })
 
 function validate(){
     var inputUsername = document.getElementById("usrnme").value;
     var inputPassword = document.getElementById('psw').value;
-    // console.log("inputUsername", inputUsername);
-    // console.log("inputPassword", inputPassword);
-    let patientRef = db.collection('patients');
-    console.log(patientRef);
-    // let checkUsername = patientRef.where('activebool','==',true).get();
-    // console.log(checkUsername);
-    // let checkPassword = patientRef.where('password', '==', inputPassword).get();
 
-    // console.log(checkPassword);
-
-    if(checkUsername)
-    {
-        if(checkPassword)
-        {
-            // window.location.href("views/patient_profile.html")
+    db.collection('patients').get().then((snapshot) => {
+      snapshot.docs.forEach(doc => {
+        if (inputUsername == doc.data().username){
+          console.log("Correct username")
+          if (inputPassword == doc.data().password) {
             console.log("Worked");
+            location.replace("https://nurahealth-70126.web.app/views/patient_profile.html");
+          } else {
+            console.log("not correct password");
+          }
+        } else {
+          console.log("Not correct username");
         }
-        else
-        {
-            console.log("Incorrect username or password");
-        }
-    }
-    else
-    {
-        console.log("Incorrect username or password");
-    }
+      })
+    })
 }

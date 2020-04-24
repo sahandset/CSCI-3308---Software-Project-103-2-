@@ -2,6 +2,17 @@
 <html lang="en">
   <head>
     <link rel="stylesheet" href="../resources/css/accountCreation.css">
+
+    <script src="/__/firebase/7.14.1/firebase-app.js"></script>
+    <!-- include only the Firebase features as you need -->
+    <script src="/__/firebase/7.14.1/firebase-auth.js"></script>
+    <script src="/__/firebase/7.14.1/firebase-firestore.js"></script>
+    <!-- <script src="https://www.gstatic.com/firebasejs/7.14.1/firebase-messaging.js"></script>   -->
+    <script src="/__/firebase/7.14.1/firebase-storage.js"></script>
+    <!-- <script src="https://www.gstatic.com/firebasejs/7.14.1/firebase-analytics.js"></script> -->
+    <!-- initialize the SDK after all desired features are loaded -->
+    <script src="/__/firebase/init.js"></script>
+    <script defer src="../index.js"></script> 
   </head>
   <body>
     <header>
@@ -23,10 +34,10 @@
           <p>Please fill in this form to create an account.</p>
           <hr>
           <label for="email"><b>Email</b></label>
-          <input type="text" placeholder="Enter Email" name="email" required>
+          <input id="usrName" type="text" placeholder="Enter Email" name="email" required>
 
           <label for="psw"><b>Password</b></label>
-          <input type="password" placeholder="Enter Password" name="psw" required>
+          <input id="usrPsw" type="password" placeholder="Enter Password" name="psw" required>
 
           <label for="psw-repeat"><b>Repeat Password</b></label>
           <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
@@ -39,7 +50,7 @@
 
           <div class="clearfix">
             <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
-            <button type="submit" class="signupbtn">Sign Up</button>
+            <button id="signUpButton" type="submit" class="signupbtn">Sign Up</button>
           </div>
         </div>
       </form>
@@ -56,7 +67,7 @@
       }
     }
     </script>
-
+    <script src="../index.js"></script>
   </body>
 
 </html>
