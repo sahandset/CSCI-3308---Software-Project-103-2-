@@ -1,3 +1,12 @@
 # CSCI-3308---Software-Project 
 
 Project and Code Components for Team Team = [Hip Hip Array]. Team # 103-2
+
+Project Description:
+Today, patients are constantly hindered by obligations and scheduling conflicts that would allow them to dedicate extensive amounts of time to their healthcare needs.  NuraHealth is a web-based health application that will provide healthcare centers with an easy way to manage their patients’ information as well as allow patients to view their diagnostics and pay for medical bills, all from the convenience of their personal device. We wanted to create seamless functionality that went hand-in-hand with user experience, geared towards ease of access for the patient as well as making it powerfully intuitive.  The application’s user interface will be made in a general way in order to allow each healthcare center to customize the application to their liking. The application is deployed using Google Firebase and relies on one of Firebase’s databases, Cloud Firestore, a non-dynamic database that was relatively easy to implement. This database was found to meet the team’s needs and knowledge more than Firebase’s dynamic database. Cloud Firestore stores patient information such as their personal physical attributes as well as any prescriptions they have or are using as well as any specialists that they have seen. The application makes use of user original authentication instead of the given Firebase authentication system. 
+
+Repo Organization:
+	All relevant files to the application is placed within the public folder. This folder is necessary in order to deploy the application through Firebase. The index.html file is within the public folder and is also necessary in order to deploy the application through Firebase. In this case, the index file is the application’s homepage. In order to connect the application to Firebase, the database configuration is created in the index.js file. The json files are created upon hosting the application. Views, resources, and any node modules are their own folders within the public folder.
+
+Build/Run/Test:
+	In order to build the code, first navigate to your directory where the “public” folder is. Afterward, open the terminal and run “firebase init” then pick “hosting” as the method. For the public folder, type in “public” and for all other options say no. Once this step is completed, run “firebase deploy.” This command will give you the url that will host the application. 
